@@ -1,10 +1,41 @@
-// promts
-// validate  
-// length number
-// hasUpperCase hasLowwerCAse ....
+let length =prompt("Which password length do you want?");
 
-//call the generator
-// Generate(length, hasUppercase , hasLowercase , hasNumbers, hasSpecial )
+    
+    while(isNaN(length)){
+        length=prompt("try again. please write a number");
+    }
+    let hasUpperCase=prompt(`Great, your password length is ${length}. now please answer with yes or no-do you want Upper Case in your password?`);
+
+    while(hasUpperCase!=='yes' && hasUpperCase!=='no'){
+         hasUpperCase=prompt("please answer only with yes or no");
+    }
+    hasUpperCase =  hasUpperCase==='yes'  ?  true : false;
+    
+    let hasLowerCase=prompt("and what about Lower Case?");
+
+    while(hasLowerCase!=='yes' && hasLowerCase!=='no'){
+         hasLowerCase=prompt("please answer only with yes or no");
+    }
+    hasLowerCase =  hasLowerCase==='yes'  ?  true : false;
+    let hasNumber=prompt("do you want your password be contained numbers?");
+    
+    while(hasNumber!=='yes' && hasNumber!=='no'){
+        hasNumber=prompt("please answer only with yes or no");
+    }
+    hasNumber = hasNumber==="yes" ?  true : false;
+    
+    let hasSpecial=prompt("do you want your password be contained Specials Charecterrs?");
+    
+    
+    while(hasSpecial!=='yes' && hasSpecial!=='no'){
+        hasSpecial=prompt("please answer only with yes or no");
+    }
+   
+   hasSpecial =  hasSpecial==='yes'  ?  true : false;
+    
+
+    
+
 
 
 
@@ -34,4 +65,4 @@ const generate = (length, hasUppercase , hasLowercase , hasNumbers, hasSpecial) 
   return resultArr.join('');
 }
 
-console.log(generate(10, true, true, true, true));
+console.log(generate(length, hasUpperCase, hasLowerCase, hasNumber, hasSpecial));
