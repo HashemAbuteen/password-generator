@@ -6,25 +6,36 @@ let length =prompt("Which password length do you want?");
     }
     let hasUpperCase=prompt(`Great, your password length is ${length}. now please answer with yes or no-do you want Upper Case in your password?`);
 
-    while(hasUpperCase!=='yes' || hasUpperCase!=='no'){
-        let hasUpperCase=prompt("please answer only with yes or no");
+    while(hasUpperCase!=='yes' && hasUpperCase!=='no'){
+         hasUpperCase=prompt("please answer only with yes or no");
     }
+    hasUpperCase =  hasUpperCase==='yes'  ?  true : false;
     
-    let hasLowerCase=prompt("and what about Lower Case?")
+    let hasLowerCase=prompt("and what about Lower Case?");
 
-    while(hasLowerCase!=='yes' || hasLowerCase!=='no'){
-        let hasUpperCase=prompt("please answer only with yes or no");
+    while(hasLowerCase!=='yes' && hasLowerCase!=='no'){
+         hasLowerCase=prompt("please answer only with yes or no");
     }
+    hasLowerCase =  hasLowerCase==='yes'  ?  true : false;
+    let hasNumber=prompt("do you want your password be contained numbers?");
+    
+    while(hasNumber!=='yes' && hasNumber!=='no'){
+        hasNumber=prompt("please answer only with yes or no");
+    }
+    hasNumber = hasNumber==="yes" ?  true : false;
+    
+    let hasSpecial=prompt("do you want your password be contained Specials Charecterrs?");
+    
+    
+    while(hasSpecial!=='yes' && hasSpecial!=='no'){
+        hasSpecial=prompt("please answer only with yes or no");
+    }
+   
+   hasSpecial =  hasSpecial==='yes'  ?  true : false;
+    
 
+    
 
-
-// promts
-// validate  
-// length number
-// hasUpperCase hasLowwerCAse ....
-
-//call the generator
-// Generate(length, hasUppercase , hasLowercase , hasNumbers, hasSpecial )
 
 
 
@@ -54,4 +65,4 @@ const generate = (length, hasUppercase , hasLowercase , hasNumbers, hasSpecial) 
   return resultArr.join('');
 }
 
-console.log(generate(10, true, true, true, true));
+console.log(generate(length, hasUpperCase, hasLowerCase, hasNumber, hasSpecial));
