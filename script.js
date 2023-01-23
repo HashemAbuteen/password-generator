@@ -8,8 +8,8 @@
 
 
 
-//12
-const special = ['!', '@', '#', '$', '^', '&', '*', '+', '-', '.', '`', '~'];
+//11
+const special = ['!', '@', '#', '$', '^', '&', '*', '+', '-', '.', '~'];
 //26
 const lower = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 //26
@@ -29,7 +29,7 @@ const generate = (length, hasUppercase , hasLowercase , hasNumbers, hasSpecial) 
   if(hasSpecial)   tempArr.push(...special);
 
   for (let i = 0; i < length; i++) {  
-    resultArr[i] = tempArr[Math.random() * tempArr.length];
+    resultArr[i] = tempArr[Math.floor(Math.random() * tempArr.length)];
   }
   return resultArr.join('');
 }
