@@ -4,6 +4,7 @@ let length =prompt("Which password length do you want?");
     while(isNaN(length)){
         length=prompt("try again. please write a number");
     }
+    
     let hasUpperCase=prompt(`Great, your password length is ${length}. now please answer with yes or no-do you want Upper Case in your password?`);
 
     while(hasUpperCase!=='yes' && hasUpperCase!=='no'){
@@ -65,4 +66,21 @@ const generate = (length, hasUppercase , hasLowercase , hasNumbers, hasSpecial) 
   return resultArr.join('');
 }
 
-console.log(generate(length, hasUpperCase, hasLowerCase, hasNumber, hasSpecial));
+
+ok = false;
+while(!ok){
+    let password=generate(length, hasUpperCase, hasLowerCase, hasNumber, hasSpecial);
+
+    ok= prompt("are you ok with this password?", password);
+
+    while(ok!=='yes' && ok!=='no'){
+        ok=prompt("please answer only with yes or no");
+    
+    }
+    ok = ok==="yes" ? true :false;
+}
+
+console.log("This is your password : ", password);
+
+
+
